@@ -1,0 +1,44 @@
+{
+  "implemented_fixture": [
+    "identical activity redelivery",
+    "missing CRM token",
+    "missing Salesforce token",
+    "inactive approved customer",
+    "unknown product code",
+    "missing consent",
+    "withdrawal plus future regrant",
+    "overlapping territory periods",
+    "future territory",
+    "missing territory",
+    "seven-day new arrival",
+    "eight-day rejected arrival",
+    "recent correction to old event",
+    "delete tombstone",
+    "missing interaction date",
+    "product hierarchy change",
+    "cancelled campaign",
+    "zero-contact member",
+    "5 percent unmatched campaign members",
+    "weekly observation replacement"
+  ],
+  "implemented_mutation_tests": [
+    "conflicting same interaction version",
+    "equal-effective territory conflict",
+    "ambiguous match token",
+    "modified file bytes",
+    "changed header with updated checksum",
+    "missing file",
+    "duplicate/missing/changed output row",
+    "XLSX formula rejection",
+    "exact/over/zero-denominator DQ boundaries"
+  ],
+  "walk_backlog": [
+    "breaking type changes across schema versions",
+    "additional/removal column delivery profiles",
+    "bad delimiter and empty file delivery profiles",
+    "stale complete replay with new filename",
+    "late consent and provider delivery",
+    "source identity reuse and merge/split",
+    "negative ready-marker and remote retry integration tests"
+  ]
+}

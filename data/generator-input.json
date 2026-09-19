@@ -1,0 +1,47 @@
+{
+  "batches": [
+    {
+      "as_of": "2026-09-14T06:00:00Z",
+      "available_at": "2026-09-14T05:00:00Z",
+      "id": "b001",
+      "mode": "bootstrap"
+    },
+    {
+      "as_of": "2026-09-15T06:00:00Z",
+      "available_at": "2026-09-15T05:00:00Z",
+      "id": "b002",
+      "mode": "incremental"
+    }
+  ],
+  "country": "ZZ",
+  "defects": {
+    "missing_consent_hcps": [
+      4
+    ],
+    "missing_territory_hcps": [
+      98
+    ],
+    "unknown_product_interactions": [
+      299,
+      300
+    ],
+    "unmatched_crm_hcps": [
+      99,
+      100
+    ],
+    "unmatched_salesforce_hcps": [
+      100
+    ],
+    "withdrawn_hcps": [
+      3
+    ]
+  },
+  "hcp_count": 100,
+  "history_end": "2026-09-13",
+  "history_start": "2026-07-01",
+  "interaction_count": 300,
+  "late_arrival_days": 7,
+  "release_id": "pharma-lab-0.1.0",
+  "reporting_timezone": "UTC",
+  "seed": 20260919
+}

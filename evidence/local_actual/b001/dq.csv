@@ -1,0 +1,6 @@
+scenario,scope,numerator,denominator,threshold,status
+S01,ALL,9,293,0.02,ALERT
+S02,ALL,2,293,0.01,PASS
+S05,SA_318a40d483dc2e,0,20,0.05,PASS
+S05,SA_64c1439171f0f7,0,20,0.05,PASS
+S05,SA_bf4e710b0809bb,1,20,0.05,PASS

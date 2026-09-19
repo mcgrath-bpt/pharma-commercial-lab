@@ -1,0 +1,50 @@
+{
+  "dq": [
+    "scenario",
+    "scope",
+    "numerator",
+    "denominator",
+    "threshold",
+    "status"
+  ],
+  "exceptions": [
+    "scenario",
+    "record_key",
+    "reason"
+  ],
+  "s01_engagement": [
+    "activity_key",
+    "customer_key",
+    "activity_date",
+    "consent_status"
+  ],
+  "s02_product_activity": [
+    "customer_key",
+    "product_code",
+    "activity_date",
+    "brand",
+    "therapy",
+    "interaction_count"
+  ],
+  "s03_customer_territory": [
+    "customer_key",
+    "territory_code",
+    "assignment_status"
+  ],
+  "s04_interaction": [
+    "activity_key",
+    "customer_key",
+    "primary_product_code",
+    "occurred_at",
+    "channel",
+    "duration_minutes",
+    "source_version"
+  ],
+  "s05_campaign": [
+    "campaign_key",
+    "customer_key",
+    "product_code",
+    "contacted",
+    "qualifying_interactions"
+  ]
+}

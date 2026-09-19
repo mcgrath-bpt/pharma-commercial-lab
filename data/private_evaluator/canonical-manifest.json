@@ -1,0 +1,218 @@
+{
+  "classification": "EVALUATOR_ONLY",
+  "files": [
+    {
+      "columns": [
+        "hcp_id",
+        "display_name",
+        "speciality",
+        "country",
+        "postal_sector",
+        "active"
+      ],
+      "entity": "hcp",
+      "path": "canonical/hcp.csv",
+      "row_count": 100,
+      "sha256": "c2f678b3d3afeb34f1a7fc7096890f1adff163d48ee596b75168aff3a19e27a9"
+    },
+    {
+      "columns": [
+        "hco_id",
+        "organisation_name",
+        "country"
+      ],
+      "entity": "hco",
+      "path": "canonical/hco.csv",
+      "row_count": 12,
+      "sha256": "8a6900daeb6855f5c6b60236e9c5e0d6db3531a06919cb75eba25bc8d8f58aa2"
+    },
+    {
+      "columns": [
+        "affiliation_id",
+        "hcp_id",
+        "hco_id",
+        "relationship_type",
+        "is_primary",
+        "effective_from",
+        "effective_to"
+      ],
+      "entity": "affiliation",
+      "path": "canonical/affiliation.csv",
+      "row_count": 100,
+      "sha256": "8f6b616b96f396acad7601b5ba7fa053419b20ecf4a6141f10edee943d259472"
+    },
+    {
+      "columns": [
+        "product_id",
+        "product_name",
+        "active"
+      ],
+      "entity": "product",
+      "path": "canonical/product.csv",
+      "row_count": 4,
+      "sha256": "49a60d79dda16e3e47c84663580613f59d055532d8e0e19c8accd1e13d6c5119"
+    },
+    {
+      "columns": [
+        "product_id",
+        "effective_from",
+        "effective_to",
+        "brand",
+        "therapy"
+      ],
+      "entity": "product_hierarchy",
+      "path": "canonical/product_hierarchy.csv",
+      "row_count": 5,
+      "sha256": "082b64b0b977dabff33002146aea35c3d1e7a0e804a61d249fb0d7c6bdba635a"
+    },
+    {
+      "columns": [
+        "territory_id",
+        "territory_name"
+      ],
+      "entity": "territory",
+      "path": "canonical/territory.csv",
+      "row_count": 4,
+      "sha256": "4e6bb31552275b6479f00969808e0d77b605db9e8f191aafdfb33c8f7d823057"
+    },
+    {
+      "columns": [
+        "rep_id",
+        "rep_name"
+      ],
+      "entity": "representative",
+      "path": "canonical/representative.csv",
+      "row_count": 8,
+      "sha256": "8e9125521341170d4820e4c17b730fa32d77cde53c59fe69b9a17ca2e1e2d067"
+    },
+    {
+      "columns": [
+        "rep_id",
+        "territory_id",
+        "effective_from",
+        "effective_to"
+      ],
+      "entity": "rep_territory",
+      "path": "canonical/rep_territory.csv",
+      "row_count": 8,
+      "sha256": "e9e15a7cfc66e6e856941aa41d7bf2169c253adb553be18a3aee9644484317a6"
+    },
+    {
+      "columns": [
+        "assignment_id",
+        "hcp_id",
+        "territory_id",
+        "effective_from",
+        "effective_to"
+      ],
+      "entity": "hcp_territory",
+      "path": "canonical/hcp_territory.csv",
+      "row_count": 101,
+      "sha256": "8ce16420d04c0b121c120be49f6b2fa4f72fdd5cd2806af2b1cd022f7ec5854a"
+    },
+    {
+      "columns": [
+        "interaction_id",
+        "version_no",
+        "hcp_id",
+        "rep_id",
+        "primary_product_id",
+        "occurred_at",
+        "channel",
+        "approval",
+        "duration_minutes",
+        "modified_at",
+        "operation",
+        "delivery_batch"
+      ],
+      "entity": "interaction",
+      "path": "canonical/interaction.csv",
+      "row_count": 306,
+      "sha256": "ac027bf6e10d183470f114132d17b9689b692be495f89b9262c079827816cb99"
+    },
+    {
+      "columns": [
+        "interaction_id",
+        "version_no",
+        "product_id",
+        "detail_rank"
+      ],
+      "entity": "interaction_product",
+      "path": "canonical/interaction_product.csv",
+      "row_count": 323,
+      "sha256": "f28b26bd0209247ef1035cc5cc72c03a0805566bd20026b110cc0e1fe62a5829"
+    },
+    {
+      "columns": [
+        "consent_id",
+        "hcp_id",
+        "channel",
+        "purpose",
+        "status",
+        "effective_at",
+        "sequence_no",
+        "delivery_batch"
+      ],
+      "entity": "consent_event",
+      "path": "canonical/consent_event.csv",
+      "row_count": 101,
+      "sha256": "d2456a5c86e1492c963b6a69951dd27433ebabf9119649f478f8d89c3d98774d"
+    },
+    {
+      "columns": [
+        "campaign_id",
+        "product_id",
+        "start_date",
+        "end_date_exclusive",
+        "status"
+      ],
+      "entity": "campaign",
+      "path": "canonical/campaign.csv",
+      "row_count": 4,
+      "sha256": "b6d2bd7a32bfd07072443c1a900becbc8070f0be0cb96933fdae1bd9c964b1a2"
+    },
+    {
+      "columns": [
+        "membership_id",
+        "campaign_id",
+        "hcp_id",
+        "member_status"
+      ],
+      "entity": "campaign_member",
+      "path": "canonical/campaign_member.csv",
+      "row_count": 80,
+      "sha256": "ed4a047a0e9698b081b9f59a15205dfd06e474846b0a958fc6222265b0b88f69"
+    },
+    {
+      "columns": [
+        "observation_id",
+        "version_no",
+        "hcp_id",
+        "product_id",
+        "week_ending",
+        "trx_count",
+        "nrx_count",
+        "sales_units"
+      ],
+      "entity": "rx_sales",
+      "path": "canonical/rx_sales.csv",
+      "row_count": 4001,
+      "sha256": "93d9aad88fe8cd4be42b5ddf6b6de942fb672c2e1b880a24b4cfe11695d65719"
+    },
+    {
+      "columns": [
+        "entity_type",
+        "canonical_id",
+        "source",
+        "source_id",
+        "link_token"
+      ],
+      "entity": "source_identity",
+      "path": "canonical/source_identity.csv",
+      "row_count": 636,
+      "sha256": "c672ce732aafe96b2e07f4ef3499501648bb8b9404c058c6a90f1de5de7a3705"
+    }
+  ],
+  "manifest_version": "1.0",
+  "release_id": "pharma-lab-0.1.0"
+}

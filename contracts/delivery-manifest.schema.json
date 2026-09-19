@@ -1,0 +1,122 @@
+{
+  "$id": "urn:synthetic-pharma:delivery-manifest:1.0",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "additionalProperties": false,
+  "properties": {
+    "as_of": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "available_at": {
+      "format": "date-time",
+      "type": "string"
+    },
+    "batch_id": {
+      "pattern": "^b[0-9]{3}$",
+      "type": "string"
+    },
+    "files": {
+      "items": {
+        "additionalProperties": false,
+        "properties": {
+          "byte_count": {
+            "minimum": 1,
+            "type": "integer"
+          },
+          "columns": {
+            "items": {
+              "type": "string"
+            },
+            "minItems": 1,
+            "type": "array",
+            "uniqueItems": true
+          },
+          "delimiter": {
+            "const": ","
+          },
+          "encoding": {
+            "const": "UTF-8"
+          },
+          "format": {
+            "const": "CSV"
+          },
+          "header": {
+            "const": true
+          },
+          "key": {
+            "type": "string"
+          },
+          "row_count": {
+            "minimum": 0,
+            "type": "integer"
+          },
+          "schema_version": {
+            "const": "1.0"
+          },
+          "sha256": {
+            "pattern": "^[a-f0-9]{64}$",
+            "type": "string"
+          },
+          "source_entity": {
+            "enum": [
+              "iqvia_like/affiliation",
+              "iqvia_like/organisation",
+              "iqvia_like/product",
+              "iqvia_like/provider",
+              "iqvia_like/rx_weekly",
+              "manual/territory_mapping",
+              "salesforce_like/campaign",
+              "salesforce_like/campaign_member",
+              "salesforce_like/consent",
+              "salesforce_like/contact",
+              "veeva_like/activity",
+              "veeva_like/activity_product",
+              "veeva_like/customer",
+              "veeva_like/staff",
+              "veeva_like/territory"
+            ]
+          }
+        },
+        "required": [
+          "key",
+          "source_entity",
+          "schema_version",
+          "columns",
+          "row_count",
+          "byte_count",
+          "sha256",
+          "format",
+          "encoding",
+          "delimiter",
+          "header"
+        ],
+        "type": "object"
+      },
+      "minItems": 1,
+      "type": "array"
+    },
+    "load_mode": {
+      "enum": [
+        "bootstrap",
+        "incremental"
+      ]
+    },
+    "manifest_version": {
+      "const": "1.0"
+    },
+    "release_id": {
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$",
+      "type": "string"
+    }
+  },
+  "required": [
+    "manifest_version",
+    "release_id",
+    "batch_id",
+    "available_at",
+    "as_of",
+    "load_mode",
+    "files"
+  ],
+  "type": "object"
+}

@@ -1,0 +1,106 @@
+{
+  "contract_version": "0.1.0",
+  "empty_denominator_status": "NO_DATA",
+  "history_start": "2026-07-01",
+  "scenarios": [
+    {
+      "alert_threshold": 0.02,
+      "cadence": "daily",
+      "deadline_utc": "07:00",
+      "dq_definition": "CRM interactions without unique active approved customer / eligible distinct interactions",
+      "id": "S01",
+      "output": "s01_engagement",
+      "primary_key": [
+        "activity_key"
+      ],
+      "sources": [
+        "iqvia_like/provider",
+        "salesforce_like/consent",
+        "salesforce_like/contact",
+        "veeva_like/activity",
+        "veeva_like/customer"
+      ],
+      "title": "Customer engagement + consent"
+    },
+    {
+      "alert_threshold": 0.01,
+      "cadence": "daily",
+      "deadline_utc": "06:30",
+      "dq_definition": "eligible interactions with any invalid detail or no details / eligible distinct interactions",
+      "id": "S02",
+      "output": "s02_product_activity",
+      "primary_key": [
+        "customer_key",
+        "product_code",
+        "activity_date"
+      ],
+      "sources": [
+        "iqvia_like/product",
+        "iqvia_like/provider",
+        "veeva_like/activity",
+        "veeva_like/activity_product",
+        "veeva_like/customer"
+      ],
+      "title": "Sales activity + product reference"
+    },
+    {
+      "alert_threshold": null,
+      "cadence": "daily",
+      "deadline_utc": null,
+      "dq_definition": "missing territory is flagged; equal latest-date distinct territories fail",
+      "id": "S03",
+      "output": "s03_customer_territory",
+      "primary_key": [
+        "customer_key"
+      ],
+      "sources": [
+        "iqvia_like/provider",
+        "manual/territory_mapping",
+        "veeva_like/territory"
+      ],
+      "title": "Customer master + territory assignment"
+    },
+    {
+      "alert_threshold": null,
+      "cadence": "daily",
+      "deadline_utc": null,
+      "dq_definition": "required-field exceptions alert; seven-day rule for new events and source modifications",
+      "id": "S04",
+      "output": "s04_interaction",
+      "primary_key": [
+        "activity_key"
+      ],
+      "sources": [
+        "veeva_like/activity"
+      ],
+      "title": "Interaction feed with late arrivals and corrections"
+    },
+    {
+      "alert_threshold": 0.05,
+      "cadence": "weekly Monday",
+      "deadline_utc": null,
+      "dq_definition": "unmatched enrolled campaign contacts / distinct enrolled campaign contacts, per campaign",
+      "id": "S05",
+      "output": "s05_campaign",
+      "primary_key": [
+        "campaign_key",
+        "customer_key"
+      ],
+      "sources": [
+        "iqvia_like/product",
+        "iqvia_like/provider",
+        "salesforce_like/campaign",
+        "salesforce_like/campaign_member",
+        "salesforce_like/contact",
+        "veeva_like/activity",
+        "veeva_like/activity_product",
+        "veeva_like/customer"
+      ],
+      "title": "Campaign effectiveness"
+    }
+  ],
+  "semantic_specification": "docs/SCENARIOS.md",
+  "status": "local semantics implemented; operational SLA not verified",
+  "threshold_operator": ">",
+  "timezone": "UTC"
+}

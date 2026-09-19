@@ -1,0 +1,108 @@
+{
+  "checkpoints": {
+    "b001": {
+      "passed": true,
+      "tables": {
+        "dq": {
+          "actual_rows": 5,
+          "expected_rows": 5,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "exceptions": {
+          "actual_rows": 25,
+          "expected_rows": 25,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s01_engagement": {
+          "actual_rows": 281,
+          "expected_rows": 281,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s02_product_activity": {
+          "actual_rows": 298,
+          "expected_rows": 298,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s03_customer_territory": {
+          "actual_rows": 99,
+          "expected_rows": 99,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s04_interaction": {
+          "actual_rows": 300,
+          "expected_rows": 300,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s05_campaign": {
+          "actual_rows": 59,
+          "expected_rows": 59,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        }
+      }
+    },
+    "b002": {
+      "passed": true,
+      "tables": {
+        "dq": {
+          "actual_rows": 5,
+          "expected_rows": 5,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "exceptions": {
+          "actual_rows": 30,
+          "expected_rows": 30,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s01_engagement": {
+          "actual_rows": 279,
+          "expected_rows": 279,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s02_product_activity": {
+          "actual_rows": 299,
+          "expected_rows": 299,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s03_customer_territory": {
+          "actual_rows": 99,
+          "expected_rows": 99,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s04_interaction": {
+          "actual_rows": 301,
+          "expected_rows": 301,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        },
+        "s05_campaign": {
+          "actual_rows": 59,
+          "expected_rows": 59,
+          "missing_rows": 0,
+          "unexpected_rows": 0
+        }
+      }
+    }
+  },
+  "passed": true,
+  "public_delivery": {
+    "batches": 2,
+    "files": 19,
+    "rows": 5346
+  },
+  "python": "3.14.7",
+  "regression_suite_passed": true,
+  "s3_upload": "NOT_RUN",
+  "snowflake_execution": "NOT_RUN"
+}

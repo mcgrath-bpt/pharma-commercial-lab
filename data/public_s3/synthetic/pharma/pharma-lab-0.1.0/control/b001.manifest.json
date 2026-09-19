@@ -1,0 +1,297 @@
+{
+  "as_of": "2026-09-14T06:00:00Z",
+  "available_at": "2026-09-14T05:00:00Z",
+  "batch_id": "b001",
+  "files": [
+    {
+      "byte_count": 7803,
+      "columns": [
+        "affiliation_key",
+        "provider_key",
+        "organisation_key",
+        "relationship_type",
+        "is_primary",
+        "effective_from",
+        "effective_to"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/iqvia_like/affiliation/batch=b001/part-00001.csv",
+      "row_count": 100,
+      "schema_version": "1.0",
+      "sha256": "8f9a68aa81aa939a1456c5237937cd5b2e705b4a39b6f319115967b01020a92d",
+      "source_entity": "iqvia_like/affiliation"
+    },
+    {
+      "byte_count": 619,
+      "columns": [
+        "organisation_key",
+        "organisation_name",
+        "country"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/iqvia_like/organisation/batch=b001/part-00001.csv",
+      "row_count": 12,
+      "schema_version": "1.0",
+      "sha256": "0d0ccff1374fdf7e963f8b5a149aa710ab50a9cbbff202935fcc47b97d32a8ce",
+      "source_entity": "iqvia_like/organisation"
+    },
+    {
+      "byte_count": 397,
+      "columns": [
+        "product_code",
+        "brand",
+        "therapy",
+        "valid_from",
+        "valid_to",
+        "active"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/iqvia_like/product/batch=b001/part-00001.csv",
+      "row_count": 5,
+      "schema_version": "1.0",
+      "sha256": "d09630dd4c888a38823ce0d7af1780d797bdff104f91630a0e8f5bdb41a85cef",
+      "source_entity": "iqvia_like/product"
+    },
+    {
+      "byte_count": 9205,
+      "columns": [
+        "provider_key",
+        "link_token",
+        "label",
+        "speciality",
+        "active",
+        "country",
+        "postal_sector"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/iqvia_like/provider/batch=b001/part-00001.csv",
+      "row_count": 100,
+      "schema_version": "1.0",
+      "sha256": "91bc6aa50b9bd07d1a3003572a917a1e6c104fa5f69a69660d50106db6ce4343",
+      "source_entity": "iqvia_like/provider"
+    },
+    {
+      "byte_count": 271516,
+      "columns": [
+        "observation_key",
+        "provider_key",
+        "product_code",
+        "week_ending",
+        "trx_count",
+        "nrx_count",
+        "sales_units",
+        "version_no"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/iqvia_like/rx_weekly/batch=b001/part-00001.csv",
+      "row_count": 4000,
+      "schema_version": "1.0",
+      "sha256": "40adf61ab7177b347f17ef20be4b65911f19da68492bd35e3d031aabf5db632a",
+      "source_entity": "iqvia_like/rx_weekly"
+    },
+    {
+      "byte_count": 6334,
+      "columns": [
+        "assignment_key",
+        "provider_key",
+        "territory_code",
+        "effective_from",
+        "effective_to"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/manual/territory_mapping/batch=b001/part-00001.csv",
+      "row_count": 101,
+      "schema_version": "1.0",
+      "sha256": "1a2ef53e9d217d0b8e09e3069600e4b0888498d2a88c4d4510a67a45f1610546",
+      "source_entity": "manual/territory_mapping"
+    },
+    {
+      "byte_count": 326,
+      "columns": [
+        "campaign_key",
+        "product_code",
+        "start_date",
+        "end_date_exclusive",
+        "status"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/salesforce_like/campaign/batch=b001/part-00001.csv",
+      "row_count": 4,
+      "schema_version": "1.0",
+      "sha256": "59279f1147a4ff09846d2b1edef01dc1bf6ddcb1980d60346adb26e81e2f5539",
+      "source_entity": "salesforce_like/campaign"
+    },
+    {
+      "byte_count": 4366,
+      "columns": [
+        "membership_key",
+        "campaign_key",
+        "contact_key",
+        "member_status"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/salesforce_like/campaign_member/batch=b001/part-00001.csv",
+      "row_count": 80,
+      "schema_version": "1.0",
+      "sha256": "a95eb3a592220af9bd29136d80a69dac6648feb07b349dce64adc2f64f135498",
+      "source_entity": "salesforce_like/campaign_member"
+    },
+    {
+      "byte_count": 8094,
+      "columns": [
+        "preference_key",
+        "contact_key",
+        "channel",
+        "purpose",
+        "status",
+        "effective_at",
+        "sequence_no"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/salesforce_like/consent/batch=b001/part-00001.csv",
+      "row_count": 99,
+      "schema_version": "1.0",
+      "sha256": "4acb6551c176259eb410b23f4e5f100dac1a036480293c7af554519a1a4d891e",
+      "source_entity": "salesforce_like/consent"
+    },
+    {
+      "byte_count": 5917,
+      "columns": [
+        "contact_key",
+        "match_token",
+        "display_name"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/salesforce_like/contact/batch=b001/part-00001.csv",
+      "row_count": 100,
+      "schema_version": "1.0",
+      "sha256": "43a6e45a906ea1a73ead53ec89dbcc6964ed3e578492dbde94660805c42041e6",
+      "source_entity": "salesforce_like/contact"
+    },
+    {
+      "byte_count": 37136,
+      "columns": [
+        "activity_key",
+        "customer_key",
+        "primary_product_code",
+        "occurred_at",
+        "channel",
+        "approval",
+        "duration_minutes",
+        "source_version",
+        "modified_at",
+        "operation"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/veeva_like/activity/batch=b001/part-00001.csv",
+      "row_count": 301,
+      "schema_version": "1.0",
+      "sha256": "4f42826632ada65f3f82f2c45334bd52e521f62bceec9e755ba428a93abefa1c",
+      "source_entity": "veeva_like/activity"
+    },
+    {
+      "byte_count": 12737,
+      "columns": [
+        "activity_key",
+        "source_version",
+        "product_code",
+        "detail_rank"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/veeva_like/activity_product/batch=b001/part-00001.csv",
+      "row_count": 317,
+      "schema_version": "1.0",
+      "sha256": "cb8a7b9b4e86ec17abc5dd31285277c59375dc100d8fcb8c9290a7fb9601a14e",
+      "source_entity": "veeva_like/activity_product"
+    },
+    {
+      "byte_count": 7206,
+      "columns": [
+        "customer_key",
+        "match_token",
+        "display_name",
+        "active"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/veeva_like/customer/batch=b001/part-00001.csv",
+      "row_count": 100,
+      "schema_version": "1.0",
+      "sha256": "bdb4be650daf891d97b0bc019d40bddbf3fe35a62ad605c086c1ac49c2f0215f",
+      "source_entity": "veeva_like/customer"
+    },
+    {
+      "byte_count": 293,
+      "columns": [
+        "staff_key",
+        "staff_name"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/veeva_like/staff/batch=b001/part-00001.csv",
+      "row_count": 8,
+      "schema_version": "1.0",
+      "sha256": "5bebef19d25ba13b84008c70fa592c9997c16caf8be12120f5f0a5bf3961d42f",
+      "source_entity": "veeva_like/staff"
+    },
+    {
+      "byte_count": 190,
+      "columns": [
+        "territory_code",
+        "territory_name"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/veeva_like/territory/batch=b001/part-00001.csv",
+      "row_count": 4,
+      "schema_version": "1.0",
+      "sha256": "c55d177399e0596290a26af863f88d62c0c1262ed503a211ab08cbc007944134",
+      "source_entity": "veeva_like/territory"
+    }
+  ],
+  "load_mode": "bootstrap",
+  "manifest_version": "1.0",
+  "release_id": "pharma-lab-0.1.0"
+}

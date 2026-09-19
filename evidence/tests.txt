@@ -1,0 +1,21 @@
+test_all_five_scenarios_and_diagnostics_both_checkpoints (test_lab.LabTests.test_all_five_scenarios_and_diagnostics_both_checkpoints) ... ok
+test_ambiguous_identity_is_not_arbitrarily_selected (test_lab.LabTests.test_ambiguous_identity_is_not_arbitrarily_selected) ... ok
+test_bad_bytes_are_rejected (test_lab.LabTests.test_bad_bytes_are_rejected) ... ok
+test_canonical_keys_types_references_and_intervals (test_lab.LabTests.test_canonical_keys_types_references_and_intervals) ... ok
+test_conflicting_same_version_fails (test_lab.LabTests.test_conflicting_same_version_fails) ... ok
+test_determinism (test_lab.LabTests.test_determinism) ... ok
+test_equal_effective_territory_conflict_and_half_open_end (test_lab.LabTests.test_equal_effective_territory_conflict_and_half_open_end) ... ok
+test_exact_thresholds_empty_and_over_boundary (test_lab.LabTests.test_exact_thresholds_empty_and_over_boundary) ... ok
+test_hand_checked_incremental_cases (test_lab.LabTests.test_hand_checked_incremental_cases) ... ok
+test_later_deliveries_are_invisible_to_earlier_cutoff (test_lab.LabTests.test_later_deliveries_are_invisible_to_earlier_cutoff) ... ok
+test_manifest_bytes_schema_counts (test_lab.LabTests.test_manifest_bytes_schema_counts) ... ok
+test_reconciliation_detects_missing_duplicate_and_wrong_values (test_lab.LabTests.test_reconciliation_detects_missing_duplicate_and_wrong_values) ... ok
+test_replay_and_reordered_input (test_lab.LabTests.test_replay_and_reordered_input) ... ok
+test_schema_drift_and_missing_file_fail_even_with_new_hash (test_lab.LabTests.test_schema_drift_and_missing_file_fail_even_with_new_hash) ... ok
+test_uploader_refuses_unlisted_private_material (test_lab.LabTests.test_uploader_refuses_unlisted_private_material) ... ok
+test_xlsx_roundtrip_and_formula_rejection (test_lab.LabTests.test_xlsx_roundtrip_and_formula_rejection) ... ok
+
+----------------------------------------------------------------------
+Ran 16 tests in 0.589s
+
+OK

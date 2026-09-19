@@ -1,0 +1,611 @@
+{
+  "affiliation": {
+    "columns": [
+      {
+        "name": "affiliation_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "hcp_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "hco_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "relationship_type",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "is_primary",
+        "nullable": false,
+        "type": "BOOLEAN"
+      },
+      {
+        "name": "effective_from",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "name": "effective_to",
+        "nullable": true,
+        "type": "DATE"
+      }
+    ],
+    "foreign_keys": {
+      "hco_id": "hco.hco_id",
+      "hcp_id": "hcp.hcp_id"
+    },
+    "grain": "one HCP\u2013HCO relationship interval",
+    "primary_key": [
+      "affiliation_id"
+    ]
+  },
+  "campaign": {
+    "columns": [
+      {
+        "name": "campaign_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "product_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "start_date",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "name": "end_date_exclusive",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "name": "status",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {
+      "product_id": "product.product_id"
+    },
+    "grain": "one single-product campaign",
+    "primary_key": [
+      "campaign_id"
+    ]
+  },
+  "campaign_member": {
+    "columns": [
+      {
+        "name": "membership_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "campaign_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "hcp_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "member_status",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {
+      "campaign_id": "campaign.campaign_id",
+      "hcp_id": "hcp.hcp_id"
+    },
+    "grain": "one campaign membership; campaign/HCP unique",
+    "primary_key": [
+      "membership_id"
+    ]
+  },
+  "consent_event": {
+    "columns": [
+      {
+        "name": "consent_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "hcp_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "channel",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "purpose",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "status",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "effective_at",
+        "nullable": false,
+        "type": "TIMESTAMP_NTZ"
+      },
+      {
+        "name": "sequence_no",
+        "nullable": false,
+        "type": "NUMBER"
+      },
+      {
+        "name": "delivery_batch",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {
+      "hcp_id": "hcp.hcp_id"
+    },
+    "grain": "one preference event for HCP/channel/purpose",
+    "primary_key": [
+      "consent_id"
+    ]
+  },
+  "hco": {
+    "columns": [
+      {
+        "name": "hco_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "organisation_name",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "country",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {},
+    "grain": "one fictional organisation",
+    "primary_key": [
+      "hco_id"
+    ]
+  },
+  "hcp": {
+    "columns": [
+      {
+        "name": "hcp_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "display_name",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "speciality",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "country",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "postal_sector",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "active",
+        "nullable": false,
+        "type": "BOOLEAN"
+      }
+    ],
+    "foreign_keys": {},
+    "grain": "one fictional professional",
+    "primary_key": [
+      "hcp_id"
+    ]
+  },
+  "hcp_territory": {
+    "columns": [
+      {
+        "name": "assignment_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "hcp_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "territory_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "effective_from",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "name": "effective_to",
+        "nullable": true,
+        "type": "DATE"
+      }
+    ],
+    "foreign_keys": {
+      "hcp_id": "hcp.hcp_id",
+      "territory_id": "territory.territory_id"
+    },
+    "grain": "one assignment interval; latest effective wins, equal-date conflict fails",
+    "primary_key": [
+      "assignment_id"
+    ]
+  },
+  "interaction": {
+    "columns": [
+      {
+        "name": "interaction_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "version_no",
+        "nullable": false,
+        "type": "NUMBER"
+      },
+      {
+        "name": "hcp_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "rep_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "primary_product_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "occurred_at",
+        "nullable": false,
+        "type": "TIMESTAMP_NTZ"
+      },
+      {
+        "name": "channel",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "approval",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "duration_minutes",
+        "nullable": false,
+        "type": "NUMBER"
+      },
+      {
+        "name": "modified_at",
+        "nullable": false,
+        "type": "TIMESTAMP_NTZ"
+      },
+      {
+        "name": "operation",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "delivery_batch",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {
+      "hcp_id": "hcp.hcp_id",
+      "primary_product_id": "product.product_id",
+      "rep_id": "representative.rep_id"
+    },
+    "grain": "one interaction version, including tombstones",
+    "primary_key": [
+      "interaction_id",
+      "version_no"
+    ]
+  },
+  "interaction_product": {
+    "columns": [
+      {
+        "name": "interaction_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "version_no",
+        "nullable": false,
+        "type": "NUMBER"
+      },
+      {
+        "name": "product_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "detail_rank",
+        "nullable": false,
+        "type": "NUMBER"
+      }
+    ],
+    "composite_foreign_keys": [
+      {
+        "columns": [
+          "interaction_id",
+          "version_no"
+        ],
+        "reference_columns": [
+          "interaction_id",
+          "version_no"
+        ],
+        "references": "interaction"
+      }
+    ],
+    "foreign_keys": {
+      "product_id": "product.product_id"
+    },
+    "grain": "one product per interaction version; complete detail replacement",
+    "primary_key": [
+      "interaction_id",
+      "version_no",
+      "product_id"
+    ]
+  },
+  "product": {
+    "columns": [
+      {
+        "name": "product_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "product_name",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "active",
+        "nullable": false,
+        "type": "BOOLEAN"
+      }
+    ],
+    "foreign_keys": {},
+    "grain": "one fictional marketed product",
+    "primary_key": [
+      "product_id"
+    ]
+  },
+  "product_hierarchy": {
+    "columns": [
+      {
+        "name": "product_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "effective_from",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "name": "effective_to",
+        "nullable": true,
+        "type": "DATE"
+      },
+      {
+        "name": "brand",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "therapy",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {
+      "product_id": "product.product_id"
+    },
+    "grain": "one product hierarchy interval",
+    "primary_key": [
+      "product_id",
+      "effective_from"
+    ]
+  },
+  "rep_territory": {
+    "columns": [
+      {
+        "name": "rep_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "territory_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "effective_from",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "name": "effective_to",
+        "nullable": true,
+        "type": "DATE"
+      }
+    ],
+    "foreign_keys": {
+      "rep_id": "representative.rep_id",
+      "territory_id": "territory.territory_id"
+    },
+    "grain": "one rep\u2013territory interval",
+    "primary_key": [
+      "rep_id",
+      "territory_id",
+      "effective_from"
+    ]
+  },
+  "representative": {
+    "columns": [
+      {
+        "name": "rep_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "rep_name",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {},
+    "grain": "one fictional representative",
+    "primary_key": [
+      "rep_id"
+    ]
+  },
+  "rx_sales": {
+    "columns": [
+      {
+        "name": "observation_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "version_no",
+        "nullable": false,
+        "type": "NUMBER"
+      },
+      {
+        "name": "hcp_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "product_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "week_ending",
+        "nullable": false,
+        "type": "DATE"
+      },
+      {
+        "name": "trx_count",
+        "nullable": false,
+        "type": "NUMBER"
+      },
+      {
+        "name": "nrx_count",
+        "nullable": false,
+        "type": "NUMBER"
+      },
+      {
+        "name": "sales_units",
+        "nullable": false,
+        "type": "NUMBER"
+      }
+    ],
+    "foreign_keys": {
+      "hcp_id": "hcp.hcp_id",
+      "product_id": "product.product_id"
+    },
+    "grain": "one weekly HCP/product commercial observation version; no patient data",
+    "primary_key": [
+      "observation_id",
+      "version_no"
+    ]
+  },
+  "source_identity": {
+    "columns": [
+      {
+        "name": "entity_type",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "canonical_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "source",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "source_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "link_token",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {},
+    "grain": "one hidden canonical-to-source identity; crawl IDs never reused",
+    "polymorphic_reference": "entity_type selects hcp, hco, product, territory, representative, interaction or campaign; canonical_id references its primary entity ID",
+    "primary_key": [
+      "entity_type",
+      "source",
+      "source_id"
+    ]
+  },
+  "territory": {
+    "columns": [
+      {
+        "name": "territory_id",
+        "nullable": false,
+        "type": "VARCHAR"
+      },
+      {
+        "name": "territory_name",
+        "nullable": false,
+        "type": "VARCHAR"
+      }
+    ],
+    "foreign_keys": {},
+    "grain": "one territory",
+    "primary_key": [
+      "territory_id"
+    ]
+  }
+}

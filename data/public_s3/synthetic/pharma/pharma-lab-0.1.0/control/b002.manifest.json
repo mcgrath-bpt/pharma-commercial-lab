@@ -1,0 +1,95 @@
+{
+  "as_of": "2026-09-15T06:00:00Z",
+  "available_at": "2026-09-15T05:00:00Z",
+  "batch_id": "b002",
+  "files": [
+    {
+      "byte_count": 166,
+      "columns": [
+        "observation_key",
+        "provider_key",
+        "product_code",
+        "week_ending",
+        "trx_count",
+        "nrx_count",
+        "sales_units",
+        "version_no"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/iqvia_like/rx_weekly/batch=b002/part-00001.csv",
+      "row_count": 1,
+      "schema_version": "1.0",
+      "sha256": "69ebc15eb062c576de87cb890c0e7abb35a2b077af2c5ff7f31f74281d6da02c",
+      "source_entity": "iqvia_like/rx_weekly"
+    },
+    {
+      "byte_count": 229,
+      "columns": [
+        "preference_key",
+        "contact_key",
+        "channel",
+        "purpose",
+        "status",
+        "effective_at",
+        "sequence_no"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/salesforce_like/consent/batch=b002/part-00001.csv",
+      "row_count": 2,
+      "schema_version": "1.0",
+      "sha256": "278c08d9c2a891227cedb6ac763e51d81d57f615ac4d3efa80bf7e459afe4df1",
+      "source_entity": "salesforce_like/consent"
+    },
+    {
+      "byte_count": 848,
+      "columns": [
+        "activity_key",
+        "customer_key",
+        "primary_product_code",
+        "occurred_at",
+        "channel",
+        "approval",
+        "duration_minutes",
+        "source_version",
+        "modified_at",
+        "operation"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/veeva_like/activity/batch=b002/part-00001.csv",
+      "row_count": 6,
+      "schema_version": "1.0",
+      "sha256": "89917e7c7494a658e540e51e3a38102e865778569ccb3f4f8b475e9c00194d72",
+      "source_entity": "veeva_like/activity"
+    },
+    {
+      "byte_count": 293,
+      "columns": [
+        "activity_key",
+        "source_version",
+        "product_code",
+        "detail_rank"
+      ],
+      "delimiter": ",",
+      "encoding": "UTF-8",
+      "format": "CSV",
+      "header": true,
+      "key": "synthetic/pharma/pharma-lab-0.1.0/sources/veeva_like/activity_product/batch=b002/part-00001.csv",
+      "row_count": 6,
+      "schema_version": "1.0",
+      "sha256": "edf11c5ac71b367c5bccfcf765a31581bc6ce71b5f2425f48033f4de7c472de6",
+      "source_entity": "veeva_like/activity_product"
+    }
+  ],
+  "load_mode": "incremental",
+  "manifest_version": "1.0",
+  "release_id": "pharma-lab-0.1.0"
+}

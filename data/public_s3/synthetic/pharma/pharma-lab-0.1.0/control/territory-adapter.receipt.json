@@ -1,0 +1,14 @@
+{
+  "adapter_version": "1.0",
+  "columns": [
+    "assignment_key",
+    "provider_key",
+    "territory_code",
+    "effective_from",
+    "effective_to"
+  ],
+  "input_sha256": "0a021fda29ef3e2478c1d79296f7e7e455c8ff2146b4d9b157dd383eac23f74d",
+  "output_sha256": "1a2ef53e9d217d0b8e09e3069600e4b0888498d2a88c4d4510a67a45f1610546",
+  "row_count": 101,
+  "sheet": "Territory"
+}
